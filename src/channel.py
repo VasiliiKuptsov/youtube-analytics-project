@@ -1,7 +1,9 @@
 import json
-#import os
-from helper.youtube_api_manual import youtube
-
+from googleapiclient.discovery import build
+import os
+#from helper.youtube_api_manual import youtube
+api_key: str = os.getenv('YT_API_KEY')# не работает, не разобраться пока'AIzaSyAsDcKOenYw7VK_FgdKK6xliT2k136X3DM'
+youtube = build('youtube', 'v3', developerKey=api_key)
 class Channel:
 
     #API_KEY = os.getenv('YT_API_KEY')

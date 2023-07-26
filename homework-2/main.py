@@ -1,15 +1,16 @@
 from src.channel import Channel
 
 if __name__ == '__main__':
-    moscowpython = Channel('UC-OVMPlMA3-YCIeg4z5z23A')
+
+    vasyanasene = Channel('UCUQCJV9ksyRXe0sCH5noWNg')
 
     # получаем значения атрибутов
-    print(moscowpython.title)  # MoscowPython
-    print(moscowpython.video_count)  # 685 (может уже больше)
-    print(moscowpython.url)  # https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A
-    print(moscowpython.print_info())
+    print(vasyanasene.title)  # ВАСЯ НА СЕНЕ
+    print(vasyanasene.video_count)  # 211 (может уже больше)
+    print(vasyanasene.url)  # https://www.youtube.com/channel/UC-OVMPlMA3-YCIeg4z5z23A
+    print(vasyanasene.print_info())
     # менять не можем
-    moscowpython.channel_id = 'Новое название'
+    vasyanasene.channel_id = 'Новое название'
     # AttributeError: property 'channel_id' of 'Channel' object has no setter
 
     # можем получить объект для работы с API вне класса
@@ -17,4 +18,4 @@ if __name__ == '__main__':
     # <googleapiclient.discovery.Resource object at 0x000002B1E54F9750>
 
     # создаем файл 'moscowpython.json' в данными по каналу
-    moscowpython.to_json('moscowpython.json')
+    vasyanasene.to_json('moscowpython.json')
