@@ -1,8 +1,8 @@
 import json
 from googleapiclient.discovery import build
 import os
-#from helper.youtube_api_manual import youtube
-api_key: str = os.getenv('YT_API_KEY')# не работает, не разобраться пока'AIzaSyAsDcKOenYw7VK_FgdKK6xliT2k136X3DM'
+
+api_key: str = os.getenv('YT_API_KEY')
 youtube = build('youtube', 'v3', developerKey=api_key)
 class Channel:
 
@@ -39,8 +39,8 @@ class Channel:
     def get_service(cls):
         return youtube
 
-    def to_json(self,filename):
-        with open (filename,'w') as file:
+    def to_json(self, filename):
+        with open (filename, 'w') as file:
             data = {'ID': self.channel_id,
             'Title': self.title,
             'Descripstion': self.description,
@@ -48,4 +48,4 @@ class Channel:
             'Subscriber count': self.subscriber_count,
             'Video count': self.video_count,
             'View count': self.view_count}
-        json.dump(data, file, insure.ascll == False)
+            json.dump(data, file, ensure_ascii=False)
