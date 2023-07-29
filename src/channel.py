@@ -6,7 +6,6 @@ api_key: str = os.getenv('YT_API_KEY')
 youtube = build('youtube', 'v3', developerKey=api_key)
 class Channel:
 
-    #API_KEY = os.getenv('YT_API_KEY')
     """Класс для ютуб-канала"""
 
     def __init__(self, channel_id: str) -> None:
@@ -20,7 +19,7 @@ class Channel:
         self.video_count = channel['items'][0]['statistics']['videoCount']
         self.view_count = channel['items'][0]['statistics']['viewCount']
 
-    def print_info(self) -> None:
+    def print_info(self):
         """Выводит в консоль информацию о канале."""
         print(f'Channel ID: {self.channel_id}\n'
             f'Title: {self.title}\n'
@@ -49,3 +48,36 @@ class Channel:
             'Video count': self.video_count,
             'View count': self.view_count}
             json.dump(data, file, ensure_ascii=False)
+
+
+    def __str__(self):
+        return f'{self.title}({self.url})'
+
+
+    def __add__(self, other):
+        return int(self.subscriber_count) + int(other.subscriber_count)
+
+
+    def __sub__(self, other):
+        return int(self.subscriber_count) - int(other.subscriber_count)
+
+
+    def __gt__(self, other):
+        return int(self.subscriber_count) > int(other.subscriber_count)
+
+
+    def __ge__(self, other):
+        return int(self.subscriber_count) >= int(other.subscriber_count)
+
+
+    def __it__(self, other):
+        return int(self.subscriber_count) < int(other.subscriber_count)
+
+
+    def __le__(self, other):
+        return int(self.subscriber_count) <= int(other.subscriber_count)
+
+
+
+
+
