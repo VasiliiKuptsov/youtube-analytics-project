@@ -21,13 +21,15 @@ class Channel:
 
     def print_info(self):
         """Выводит в консоль информацию о канале."""
+
         print(f'Channel ID: {self.channel_id}\n'
-            f'Title: {self.title}\n'
-            f'Descripstion: {self.description}\n'
-            f'Channel url: {self.url}\n'
-            f'Subscriber count: {self.subscriber_count}\n'
-            f'Video count: {self.video_count}\n'
-            f'View count: {self.view_count}')
+        f'Title: {self.title}\n'
+        f'Descripstion: {self.description}\n'
+        f'Channel url: {self.url}\n'
+        f'Subscriber count: {self.subscriber_count}\n'
+        f'Video count: {self.video_count}\n'
+        f'View count: {self.view_count}')
+        return
 
 
     @property
