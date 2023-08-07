@@ -1,6 +1,6 @@
 import datetime
-
-from src.video import PlayList
+from src.playlist import PlayList
+#from src.video import PlayList
 
 if __name__ == '__main__':
     pl = PlayList('PLekfpYe-gBR88aQVAL76u3FPJ8hpeRkz1')
